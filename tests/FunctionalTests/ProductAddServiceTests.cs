@@ -24,7 +24,7 @@ public class ProductAddServiceTests
         ProductAddService service = new(fakeExcelParser, fakeRepository);
 
         // Act
-        await service.AddProductsAsync();
+        await service.AddProductsAsync("fakeFile.xlsx");
 
         // Assert
         var actual = (fakeRepository as FakeProductsRepository)!.GetData();

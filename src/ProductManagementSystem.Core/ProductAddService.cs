@@ -14,9 +14,9 @@ public class ProductAddService : IProductAddService
         this.productsRepository = productsRepository;
     }
 
-    public async Task AddProductsAsync()
+    public async Task AddProductsAsync(string fileName)
     {
-        IEnumerable<Product> products = excelParser.ParseProductData(""); // TODO: Use proper filename
+        IEnumerable<Product> products = excelParser.ParseProductData(fileName);
         await productsRepository.AddListAsync(products);
     }
 }

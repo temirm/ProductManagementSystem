@@ -1,7 +1,6 @@
 ﻿using ProductManagementSystem.Core.Entities;
 using ProductManagementSystem.Infrastructure;
 using System.Diagnostics.CodeAnalysis;
-using Xunit.Abstractions;
 
 namespace UnitTests;
 

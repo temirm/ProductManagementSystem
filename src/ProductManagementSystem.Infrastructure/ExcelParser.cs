@@ -31,11 +31,11 @@ public class ExcelParser : IExcelParser
         return table
             .DataRange
             .Rows()
-            .Select(CreateProductFromTableRow)
+            .Select(ParseProductFromTableRow)
             .ToList();
     }
 
-    private Product CreateProductFromTableRow(IXLTableRow row)
+    private Product ParseProductFromTableRow(IXLTableRow row)
     {
         string name = row.Field(NAME_COLUMN).GetText();
         string unitName = row.Field(UNIT_NAME_COLUMN).GetText();
@@ -49,6 +49,7 @@ public class ExcelParser : IExcelParser
     {
         internal void ValidateTable(IXLTable table)
         {
+            // TODO: Add unit tests for the following cases
             var columns = table.Fields;
             ThrowIf(columns.Count() != 4, $"The table is expected to have four columns, {columns.Count()} were found.");           
 

@@ -5,12 +5,12 @@ namespace FunctionalTests.Fakes;
 
 public class FakeExcelParser : IExcelParser
 {
-    private readonly List<Product> data = new();
+    private readonly IEnumerable<Product> data;
 
     public FakeExcelParser(IEnumerable<Product> productsToReturn)
     {
-        data.AddRange(productsToReturn);
+        data = productsToReturn;
     }
 
-    public IEnumerable<Product> ParseProductData() => data;
+    public IEnumerable<Product> ParseProductData(string fileName) => data.ToArray();
 }

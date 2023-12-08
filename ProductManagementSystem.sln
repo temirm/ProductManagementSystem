@@ -5,11 +5,11 @@ VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{05C215A2-45F7-4439-9F6E-0645A9A82512}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManagementSystem.Core", "src\ProjectManagementSystem.Core\ProjectManagementSystem.Core.csproj", "{DF2FC7C1-C273-4492-B68E-C9E2FC0F4120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductManagementSystem.Core", "src\ProjectManagementSystem.Core\ProductManagementSystem.Core.csproj", "{DF2FC7C1-C273-4492-B68E-C9E2FC0F4120}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{12641588-ADF9-4BDD-9351-0BAA12448BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionalTests", "tests\FunctionalTests\FunctionalTests.csproj", "{E39DDFD6-BD7C-474A-8449-FC001506F4CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionalTests", "tests\FunctionalTests\FunctionalTests.csproj", "{E39DDFD6-BD7C-474A-8449-FC001506F4CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

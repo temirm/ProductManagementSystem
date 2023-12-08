@@ -1,4 +1,4 @@
-﻿namespace ProjectManagementSystem.Core.Entities;
+﻿namespace ProductManagementSystem.Core.Entities;
 
 public class Product
 {
@@ -12,14 +12,14 @@ public class Product
     {
         Name = name;
         UnitName = unitName;
-        
+
         if (unitPrice < 0)
         {
             // TODO: Use custom exception
             throw new Exception();
         }
         UnitPrice = unitPrice;
-        
+
         if (unitNumber < 0)
         {
             // TODO: Use custom exception

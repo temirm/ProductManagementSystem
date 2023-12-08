@@ -1,4 +1,4 @@
-﻿namespace ProjectManagementSystem.Core.Interfaces;
+﻿namespace ProductManagementSystem.Core.Interfaces;
 
 public interface IProductAddService
 {

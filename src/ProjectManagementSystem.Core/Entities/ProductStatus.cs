@@ -1,4 +1,4 @@
-﻿namespace ProjectManagementSystem.Core.Entities;
+﻿namespace ProductManagementSystem.Core.Entities;
 
 public class ProductStatus
 {
@@ -6,7 +6,7 @@ public class ProductStatus
     public Guid? ProductGroupId { get; private set; }
     public bool IsInGroup { get; private set; } = false;
 
-    public Product Product { get; private set; }    
+    public Product Product { get; private set; }
 
     public ProductStatus(Product product)
     {

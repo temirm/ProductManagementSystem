@@ -1,4 +1,4 @@
-﻿namespace ProjectManagementSystem.Core.Entities;
+﻿namespace ProductManagementSystem.Core.Entities;
 
 public class ProductGroup
 {

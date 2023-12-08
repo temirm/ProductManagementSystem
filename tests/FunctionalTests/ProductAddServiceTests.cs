@@ -1,7 +1,7 @@
 ﻿using FunctionalTests.Fakes;
-using ProjectManagementSystem.Core;
-using ProjectManagementSystem.Core.Entities;
-using ProjectManagementSystem.Core.Interfaces;
+using ProductManagementSystem.Core;
+using ProductManagementSystem.Core.Entities;
+using ProductManagementSystem.Core.Interfaces;
 
 namespace FunctionalTests;
 

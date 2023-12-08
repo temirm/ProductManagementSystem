@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ProjectManagementSystem.Core\ProjectManagementSystem.Core.csproj" />
+    <ProjectReference Include="..\..\src\ProjectManagementSystem.Core\ProductManagementSystem.Core.csproj" />
   </ItemGroup>
 
 </Project>

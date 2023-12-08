@@ -1,7 +1,7 @@
-﻿using ProjectManagementSystem.Core.Entities;
-using ProjectManagementSystem.Core.Interfaces;
+﻿using ProductManagementSystem.Core.Entities;
+using ProductManagementSystem.Core.Interfaces;
 
-namespace ProjectManagementSystem.Core;
+namespace ProductManagementSystem.Core;
 
 public class ProductAddService : IProductAddService
 {

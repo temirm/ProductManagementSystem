@@ -1,6 +1,6 @@
-﻿using ProjectManagementSystem.Core.Entities;
+﻿using ProductManagementSystem.Core.Entities;
 
-namespace ProjectManagementSystem.Core.Interfaces;
+namespace ProductManagementSystem.Core.Interfaces;
 
 public interface IExcelParser
 {

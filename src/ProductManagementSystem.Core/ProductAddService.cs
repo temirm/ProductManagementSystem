@@ -16,7 +16,7 @@ public class ProductAddService : IProductAddService
 
     public async Task AddProductsAsync()
     {
-        IEnumerable<Product> products = excelParser.ParseProductData();
+        IEnumerable<Product> products = excelParser.ParseProductData(""); // TODO: Use proper filename
         await productsRepository.AddListAsync(products);
     }
 }

@@ -10,6 +10,7 @@ public class ProductGroupItem
     public ProductGroupItem(Product product, int unitNumber)
     {
         Product = product;
+        ProductId = product.Id;
         UnitNumber = unitNumber;
     }
 }

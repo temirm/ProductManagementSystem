@@ -2,7 +2,7 @@
 
 public class Product
 {
-    public Guid Id { get; private set; }
+    public Guid Id { get; init; }
     public string Name { get; private set; }
     public string UnitName { get; private set; }
     public double UnitPrice { get; private set; }

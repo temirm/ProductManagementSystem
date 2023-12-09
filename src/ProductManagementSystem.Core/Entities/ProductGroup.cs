@@ -3,13 +3,14 @@
 public class ProductGroup
 {
     public Guid Id { get; set; }
-    public Guid ProductId { get; set; }
-    public int UnitNumber { get; private set; }
 
-    public Product Product { get; private set; }
+    private List<ProductGroupItem> items = new();
+    public IEnumerable<ProductGroupItem> GroupItems => items.ToArray();
 
-    public ProductGroup(Product product)
+    public void AddGroupItem(ProductGroupItem item)
     {
-        Product = product;
+        items.Add(item);
     }
+
+    public double TotalPrice => items.Select(i => i.UnitNumber * i.Product.UnitPrice).Sum();
 }

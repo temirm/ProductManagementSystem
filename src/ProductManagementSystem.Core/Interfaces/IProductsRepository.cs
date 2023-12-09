@@ -5,4 +5,5 @@ namespace ProductManagementSystem.Core.Interfaces;
 public interface IProductsRepository
 {
     Task AddListAsync(IEnumerable<Product> products);
+    Task<IEnumerable<Product>> GetNotGroupedAsync();
 }

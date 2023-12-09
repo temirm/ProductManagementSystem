@@ -13,5 +13,10 @@ public class FakeProductsRepository : IProductsRepository
         return Task.CompletedTask;
     }
 
+    public Task<IEnumerable<Product>> GetNotGroupedAsync()
+    {
+        throw new NotImplementedException();
+    }
+
     internal IEnumerable<Product> GetData() => data.ToArray();
 }

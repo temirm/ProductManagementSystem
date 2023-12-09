@@ -2,9 +2,8 @@
 
 namespace ProductManagementSystem.Core.Interfaces;
 
-public interface IGroupsRepository
+public interface IGroupsService
 {
-    Task AddListAsync(IEnumerable<ProductGroup> groups);
     Task<IEnumerable<Guid>> ListAll();
     Task<ProductGroup> GetById(Guid id);
 }

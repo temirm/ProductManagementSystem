@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProductManagementSystem.Core;
-using ProductManagementSystem.Core.GroupGeneratorAlgorithm;
-using ProductManagementSystem.Core.Interfaces;
-using ProductManagementSystem.Infrastructure.Repositories;
+using ProductManagementSystem.Infrastructure;
 using Quartz;
 
 namespace ProductManagementSystem.TaskManager;
@@ -32,11 +30,9 @@ public class Program
                 {
                     options.WaitForJobsToComplete = true;
                 });
-
+                
                 services.AddTransient<GenerateGroupsJob>();
-                services.AddTransient<IGroupGeneratorService, GroupGeneratorService>();
-                services.AddSingleton<IGroupGeneratorAlgorithm, GroupGeneratorAlgorithm>();
-                services.AddTransient<IProductsRepository, ProductsRepository>();
-                services.AddTransient<IGroupsRepository, GroupsRepository>();
+                services.AddCoreServices();
+                services.AddRepositories();
             });
 }

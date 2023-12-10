@@ -1,6 +1,7 @@
 ﻿using ProductManagementSystem.Core.Entities;
+using ProductManagementSystem.Core.Interfaces;
 
-namespace ProductManagementSystem.Core.Interfaces;
+namespace ProductManagementSystem.Core;
 
 public class GroupsService : IGroupsService
 {

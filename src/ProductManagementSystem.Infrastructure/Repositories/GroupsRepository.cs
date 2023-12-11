@@ -20,7 +20,9 @@ public class GroupsRepository : IGroupsRepository
     }
 
     public async Task<ProductGroup?> GetById(Guid id)
-        => await dbContext.Groups.FirstOrDefaultAsync(g => g.Id == id);
+        => await dbContext.Groups
+            .Include(g => g.GroupItems)
+            .FirstOrDefaultAsync(g => g.Id == id);
 
     public async Task<IEnumerable<ProductGroup>> ListAll()
         => await dbContext.Groups.ToListAsync();

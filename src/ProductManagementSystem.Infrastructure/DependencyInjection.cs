@@ -6,6 +6,14 @@ namespace ProductManagementSystem.Infrastructure;
 
 public static class DependencyInjection
 {
+    public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+    {
+        services.AddExcelParser();
+        services.AddRepositories();
+
+        return services;
+    }
+
     public static IServiceCollection AddExcelParser(this IServiceCollection services)
         => services.AddTransient<IExcelParser, ExcelParser>();
 

@@ -1,17 +1,29 @@
-﻿using ProductManagementSystem.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductManagementSystem.Core.Entities;
 using ProductManagementSystem.Core.Interfaces;
 
 namespace ProductManagementSystem.Infrastructure.Repositories;
 
 public class ProductsRepository : IProductsRepository
 {
-    public Task AddListAsync(IEnumerable<Product> products)
+    private readonly AppDbContext dbContext;
+
+    public ProductsRepository(AppDbContext dbContext)
     {
-        throw new NotImplementedException();
+        this.dbContext = dbContext;
     }
 
-    public Task<IEnumerable<Product>> GetNotGroupedAsync()
+    public async Task AddListAsync(IEnumerable<Product> products)
     {
-        throw new NotImplementedException();
+        dbContext.Products.AddRange(products);
+        await dbContext.SaveChangesAsync();
+    }
+
+    public async Task<IEnumerable<Product>> GetNotGroupedAsync()
+    {
+        return await dbContext.Products.Where(p => !dbContext.GroupItems
+            .Select(i => i.ProductId)
+            .Contains(p.Id)
+        ).ToListAsync();
     }
 }

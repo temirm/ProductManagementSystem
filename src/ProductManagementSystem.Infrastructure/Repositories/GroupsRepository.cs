@@ -1,22 +1,27 @@
-﻿using ProductManagementSystem.Core.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductManagementSystem.Core.Entities;
 using ProductManagementSystem.Core.Interfaces;
 
 namespace ProductManagementSystem.Infrastructure.Repositories;
 
 public class GroupsRepository : IGroupsRepository
 {
-    public Task AddListAsync(IEnumerable<ProductGroup> groups)
+    private readonly AppDbContext dbContext;
+
+    public GroupsRepository(AppDbContext dbContext)
     {
-        throw new NotImplementedException();
+        this.dbContext = dbContext;
     }
 
-    public Task<ProductGroup> GetById(Guid id)
+    public async Task AddListAsync(IEnumerable<ProductGroup> groups)
     {
-        throw new NotImplementedException();
+        dbContext.Groups.AddRange(groups);
+        await dbContext.SaveChangesAsync();
     }
 
-    public Task<IEnumerable<Guid>> ListAll()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<ProductGroup?> GetById(Guid id)
+        => await dbContext.Groups.FirstOrDefaultAsync(g => g.Id == id);
+
+    public async Task<IEnumerable<ProductGroup>> ListAll()
+        => await dbContext.Groups.ToListAsync();
 }

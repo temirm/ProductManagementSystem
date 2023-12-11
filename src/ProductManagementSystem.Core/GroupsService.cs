@@ -12,7 +12,8 @@ public class GroupsService : IGroupsService
         this.groupsRepository = groupsRepository;
     }
 
-    public Task<ProductGroup> GetById(Guid id) => groupsRepository.GetById(id);
+    public Task<ProductGroup?> GetById(Guid id) => groupsRepository.GetById(id);
 
-    public Task<IEnumerable<Guid>> ListAll() => groupsRepository.ListAll();
+    public async Task<IEnumerable<Guid>> ListAll()
+        => (await groupsRepository.ListAll()).Select(g => g.Id);
 }

@@ -17,13 +17,12 @@ public class GenerateGroupsJob : IJob
         this.logger = logger;
     }
 
-    public Task Execute(IJobExecutionContext context)
+    public async Task Execute(IJobExecutionContext context)
     {
         try
-        {            
-            logger.LogInformation("Success"); // TODO: Add actual job functionality
-            
-            return Task.CompletedTask;
+        {
+            IEnumerable<Guid> groups = await groupGeneratorService.GenerateGroupsAsync();
+            logger.LogInformation($"{groups.Count()} groups were generated.");
         }
         catch (Exception ex)
         {

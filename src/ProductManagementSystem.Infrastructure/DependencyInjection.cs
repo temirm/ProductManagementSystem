@@ -11,6 +11,7 @@ public static class DependencyInjection
 
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
+        services.AddDbContext<AppDbContext>(ServiceLifetime.Singleton);
         services.AddTransient<IProductsRepository, ProductsRepository>();
         services.AddTransient<IGroupsRepository, GroupsRepository>();
         
